@@ -9,6 +9,7 @@ using MyCommunity.Common.RabbitMq;
 using MyCommunity.Common.Auth;
 using MyCommunity.Api.Repositories;
 using MyCommunity.Common.Mongo;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MyCommunity.Api
 {
@@ -24,6 +25,10 @@ namespace MyCommunity.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "MyCommunity API", Version = "v1" });
+            });
             services.AddMvc();
             services.AddLogging();
             services.AddJwt(Configuration);
@@ -43,6 +48,10 @@ namespace MyCommunity.Api
             }
 
             app.UseMvc();
+            app.UseSwagger().UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             //var xyz =serviceProvider.GetService<IEventHandler<ActivityCreated>>();
             //var xyz = serviceProvider.GetService<IBusClient>();
         }
