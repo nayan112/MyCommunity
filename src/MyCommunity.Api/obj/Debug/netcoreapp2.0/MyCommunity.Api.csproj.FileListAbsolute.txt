@@ -1,0 +1,13 @@
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Api.deps.json
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Api.runtimeconfig.json
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Api.runtimeconfig.dev.json
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Api.dll
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Api.pdb
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Common.dll
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\bin\Debug\netcoreapp2.0\MyCommunity.Common.pdb
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\obj\Debug\netcoreapp2.0\MyCommunity.Api.csprojResolveAssemblyReference.cache
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\obj\Debug\netcoreapp2.0\MyCommunity.Api.csproj.CoreCompileInputs.cache
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\obj\Debug\netcoreapp2.0\MyCommunity.Api.AssemblyInfoInputs.cache
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\obj\Debug\netcoreapp2.0\MyCommunity.Api.AssemblyInfo.cs
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\obj\Debug\netcoreapp2.0\MyCommunity.Api.dll
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Api\obj\Debug\netcoreapp2.0\MyCommunity.Api.pdb

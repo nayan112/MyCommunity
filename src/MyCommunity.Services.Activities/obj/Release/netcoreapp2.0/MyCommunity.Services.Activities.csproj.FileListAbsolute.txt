@@ -1,0 +1,12 @@
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Services.Activities.deps.json
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Services.Activities.runtimeconfig.json
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Services.Activities.runtimeconfig.dev.json
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Services.Activities.dll
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Services.Activities.pdb
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Common.dll
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\bin\Release\netcoreapp2.0\MyCommunity.Common.pdb
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\obj\Release\netcoreapp2.0\MyCommunity.Services.Activities.csproj.CoreCompileInputs.cache
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\obj\Release\netcoreapp2.0\MyCommunity.Services.Activities.AssemblyInfoInputs.cache
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\obj\Release\netcoreapp2.0\MyCommunity.Services.Activities.AssemblyInfo.cs
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\obj\Release\netcoreapp2.0\MyCommunity.Services.Activities.dll
+C:\Projects\Personal\MyCommunity\src\MyCommunity.Services.Activities\obj\Release\netcoreapp2.0\MyCommunity.Services.Activities.pdb

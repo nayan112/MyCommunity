@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  start-dependencies:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - mongo
+      - rabbitmq
+    command: rabbitmq:5672
+
+  mycommunity.api:
+    build: ./src/MyCommunity.Api
+    links:
+      - rabbitmq
+      - mongo
+    ports:
+      - '5000:5000'
+
+  mycommunity.services.activities:
+    build: ./src/MyCommunity.Services.Activities
+    links:
+      - rabbitmq
+      - mongo
+    ports:
+      - '5050:5050'
+  mycommunity.services.identity:
+    build: ./src/MyCommunity.Services.Identity
+    links:
+      - rabbitmq
+      - mongo
+    ports:
+      - '5051:5051'
+  
+  mongo:
+    image: mongo
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - '27017:27017'
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
