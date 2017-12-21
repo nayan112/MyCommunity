@@ -1,8 +1,0 @@
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\bin\Release\netcoreapp2.0\MyCommunity.Common.deps.json
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\bin\Release\netcoreapp2.0\MyCommunity.Common.dll
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\bin\Release\netcoreapp2.0\MyCommunity.Common.pdb
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\obj\Release\netcoreapp2.0\MyCommunity.Common.csproj.CoreCompileInputs.cache
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\obj\Release\netcoreapp2.0\MyCommunity.Common.AssemblyInfoInputs.cache
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\obj\Release\netcoreapp2.0\MyCommunity.Common.AssemblyInfo.cs
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\obj\Release\netcoreapp2.0\MyCommunity.Common.dll
-C:\Projects\Personal\MyCommunity\src\MyCommunity.Common\obj\Release\netcoreapp2.0\MyCommunity.Common.pdb
