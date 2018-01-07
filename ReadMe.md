@@ -13,6 +13,17 @@ Steps to Run the project
    > docker-compose run start-dependencies
    
    > docker-compose up   
+   
+4. Once all servies running, you'll get the ports of each service.
+5. RabbitMQ & MongoDB is also running in container along with services.
+6. For Rabbit MQ the urls is http://localhost:15672/ & the username/password is guest/guest
+7. Mongo db is running in port 27017. For navigation, RoboMongo can be used without any installation
+8. On successfull running, urls can be validated with Advance Rest Client as below
+	1. POST to http://localhost:5000/users/register with body  {"email":"user@user.com","password":"password","name":"user"}
+    2. POST to http://localhost:5051/login with body {"email":"user@user.com","password":"password"}
+    3. Save the JSON Token & check the activities with GET request to http://localhost:5000/activities & header Authorization<> Bearer <token>
+    4. To add activity
+      
 
 Some other usefull commands used in the course of development
 dotnet new sln
