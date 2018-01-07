@@ -1,16 +1,18 @@
-MyCommunity
+## MyCommunity
+### -Microservice Test Project
 
-Microservice Test Project
 
-Some basic commandlines
-
-Run the project
+Steps to Run the project
 1. Build the solution. In case of failure, make sure individual web projects build.
 2. On successful build, publish each individual web projects with command
-   dotnet publish -c Release -o ./bin/Docker
+
+	> dotnet restore ./MyCommunity.sln && dotnet publish ./MyCommunity.sln -c Release -o ./bin/Docker
+
 3. Move to the root and run following commands
-   docker-compose run start-dependencies
-   docker-compose up   
+
+   > docker-compose run start-dependencies
+   
+   > docker-compose up   
 
 Some other usefull commands used in the course of development
 dotnet new sln
