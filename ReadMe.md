@@ -27,13 +27,21 @@ Steps to Run the project
 
 Some other usefull commands used in the course of development
    > dotnet new sln
+   
    > md src
+   
    > cd src
+   
    > dotnet new webapi MyCommunity.Api
+   
    > dotnet new webapi MyCommunity.Services.Identity
+   
    > dotnet new webapi MyCommunity.Services.Activities
 
    > docker pull rabbitmq
+   
    > docker run -p 15672:15672 rabbitmq
+   
    > docker run -d -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+   
    > docker run -d -p 27017:27017 mongo
