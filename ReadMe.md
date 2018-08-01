@@ -32,11 +32,17 @@ Some other usefull commands used in the course of development
    
    > cd src
    
-   > dotnet new webapi MyCommunity.Api
+   > dotnet new webapi -n MyCommunity.Api
    
-   > dotnet new webapi MyCommunity.Services.Identity
+   > dotnet sln add .\MyCommunity.Api\MyCommunity.Api.csproj
    
-   > dotnet new webapi MyCommunity.Services.Activities
+   > dotnet new webapi -n MyCommunity.Services.Identity
+   
+   > dotnet sln add .\MyCommunity.Services.Identity\MyCommunity.Services.Identity.csproj
+   
+   > dotnet new webapi -n MyCommunity.Services.Activities
+   
+   > dotnet sln add .\MyCommunity.Services.Activities\MyCommunity.Services.Activities.csproj
 
    > docker pull rabbitmq
    
