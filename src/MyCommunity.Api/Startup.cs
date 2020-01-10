@@ -27,7 +27,7 @@ namespace MyCommunity.Api
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "MyCommunity API", Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "MyCommunity API", Version = "v1" });
             });
             services.AddMvc();
             services.AddLogging();

@@ -13,18 +13,18 @@ namespace MyCommunity.Common.Auth
             section.Bind(options);
             services.Configure<JwtOptions>(section);
             services.AddSingleton<IJwtHandler, JwtHandler>();
-            services.AddAuthentication()
-             .AddJwtBearer(cfg =>
-             {
-                 cfg.RequireHttpsMetadata = false;
-                 cfg.SaveToken = true;
-                 cfg.TokenValidationParameters = new TokenValidationParameters
-                 {
-                     ValidateAudience = false,
-                     ValidIssuer = options.Issuer,
-                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SecretKeys))
-                 };
-             });
+            //services.AddAuthentication()
+            // .AddJwtBearer(cfg =>
+            // {
+            //     cfg.RequireHttpsMetadata = false;
+            //     cfg.SaveToken = true;
+            //     cfg.TokenValidationParameters = new TokenValidationParameters
+            //     {
+            //         ValidateAudience = false,
+            //         ValidIssuer = options.Issuer,
+            //         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SecretKeys))
+            //     };
+            // });
         }
     }
 }
