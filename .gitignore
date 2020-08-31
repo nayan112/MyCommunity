@@ -263,3 +263,4 @@ __pycache__/
 .vs/MyCommunity/v15/.suo
 .vs/MyCommunity/v15/.suo
 .vs/MyCommunity/v15/sqlite3/storage.ide
+/data/db

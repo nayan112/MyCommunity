@@ -39,7 +39,7 @@ namespace MyCommunity.Api.Test.UnitTests.Controllers
             var result = await controller.Post(command);
             var contentResult = result as AcceptedResult;
             contentResult.Should().NotBeNull();
-            contentResult.Location.ShouldBeEquivalentTo($"Activities/{command.Id}");
+            contentResult.Location.Should().BeEquivalentTo($"Activities/{command.Id}");
 
         }
     }

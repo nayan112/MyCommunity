@@ -12,6 +12,7 @@ using MyCommunity.Services.Identity.Repositories;
 using MyCommunity.Common.Mongo;
 using MyCommunity.Services.Identity.Services;
 using MyCommunity.Common.Auth;
+using MyCommunity.Common.Swagger;
 
 namespace MyCommunity.Services.Identity
 {
@@ -27,7 +28,8 @@ namespace MyCommunity.Services.Identity
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddControllers();
+            services.AddSwaggerDocumentation("yCommunity.Services.Identity Api");
             services.AddLogging();
             services.AddJwt(Configuration);
             services.AddMongoDb(Configuration);
@@ -49,7 +51,14 @@ namespace MyCommunity.Services.Identity
                 app.UseDeveloperExceptionPage();
             }
             app.ApplicationServices.GetService<IDatabaseInitializer>().InitializeAsync();
-            app.UseMvc();
+            app.ApplicationServices.GetService<IDatabaseInitializer>().InitializeAsync();
+            app.UseRouting();
+            app.UseSwaggerDocumentation("yCommunity.Services.Identity Api");
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
             //var xyz = serviceProvider.GetService<ICommandHandler<CreateActivity>>();
         }
     }

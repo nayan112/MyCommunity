@@ -9,7 +9,8 @@ using MyCommunity.Common.RabbitMq;
 using MyCommunity.Common.Auth;
 using MyCommunity.Api.Repositories;
 using MyCommunity.Common.Mongo;
-using Swashbuckle.AspNetCore.Swagger;
+using MyCommunity.Common.Swagger;
+using Microsoft.Extensions.Hosting;
 
 namespace MyCommunity.Api
 {
@@ -25,11 +26,8 @@ namespace MyCommunity.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "MyCommunity API", Version = "v1" });
-            });
-            services.AddMvc();
+            services.AddControllers();
+            services.AddSwaggerDocumentation("MyCommunity.Api");
             services.AddLogging();
             services.AddJwt(Configuration);
             services.AddMongoDb(Configuration);
@@ -40,17 +38,19 @@ namespace MyCommunity.Api
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)//, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
-            app.UseSwagger().UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            app.UseRouting();
+            app.UseSwaggerDocumentation("MyCommunity.Api");
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
             });
             //var xyz =serviceProvider.GetService<IEventHandler<ActivityCreated>>();
             //var xyz = serviceProvider.GetService<IBusClient>();

@@ -7,41 +7,38 @@ services:
       - mongo
       - rabbitmq
     command: rabbitmq:5672
-    
+
   mycommunity.api:
-    build: 
-        context: .
+    build:
+        context: ./src/MyCommunity.Api
         dockerfile: src/MyCommunity.Api/Dockerfile
     links:
       - rabbitmq
       - mongo
     ports:
-      - '5000:5000'
+      - '5001:5001'
 
   mycommunity.services.activities:
     build: 
-        context: .
+        context: ./src/MyCommunity.Services.Activities
         dockerfile: src/MyCommunity.Services.Activities/Dockerfile
     links:
       - rabbitmq
       - mongo
     ports:
-      - '5050:5050'
-
+      - '5052:5052'
   mycommunity.services.identity:
     build: 
-        context: .
+        context: ./src/MyCommunity.Services.Identity
         dockerfile: src/MyCommunity.Services.Identity/Dockerfile
     links:
       - rabbitmq
       - mongo
     ports:
       - '5051:5051'
-
+  
   mongo:
     image: mongo
-#    volumes:
-#      - ./data/db:/data/db
     ports:
       - '27017:27017'
 
@@ -50,5 +47,3 @@ services:
     ports:
       - '5672:5672'
       - '15672:15672'
-    hostname: rabbitmq
-    container_name: rabbitmq

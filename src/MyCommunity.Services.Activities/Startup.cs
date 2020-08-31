@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using MyCommunity.Common.RabbitMq;
 using MyCommunity.Common.Commands;
 using MyCommunity.Services.Activities.Handler;
@@ -15,6 +10,8 @@ using MyCommunity.Common.Mongo;
 using MyCommunity.Services.Activities.Domain.Repositories;
 using MyCommunity.Services.Activities.Repositories;
 using MyCommunity.Services.Activities.Services;
+using MyCommunity.Common.Swagger;
+using Microsoft.Extensions.Hosting;
 
 namespace MyCommunity.Services.Activities
 {
@@ -30,7 +27,8 @@ namespace MyCommunity.Services.Activities
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddControllers();
+            services.AddSwaggerDocumentation("MyCommunity.Services.Activities Api");
             services.AddLogging();
             services.AddMongoDb(Configuration);
             services.AddRabbitMq(Configuration);
@@ -43,14 +41,20 @@ namespace MyCommunity.Services.Activities
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)//IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             app.ApplicationServices.GetService<IDatabaseInitializer>().InitializeAsync();
-            app.UseMvc();
+            app.UseRouting();
+            app.UseSwaggerDocumentation("MyCommunity.Services.Activities Api");
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
             //var xyz = serviceProvider.GetService<ICommandHandler<CreateActivity>>();
         }
     }
